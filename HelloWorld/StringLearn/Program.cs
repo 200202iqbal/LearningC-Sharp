@@ -4,6 +4,7 @@ namespace StringLearn
 {
     class MainClass
     {
+        private string[] names = {"Spencer","Sally","Doug"};
         public static void Main(string[] args)
         {
             string txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -34,6 +35,33 @@ namespace StringLearn
 
             //access string
             Console.WriteLine(fullName[0]);
+
+            //index position a character
+            string myString = "Hello World";
+            Console.WriteLine(myString.IndexOf("e"));
+
+            int charPos = myString.IndexOf("e"); //get position of chararter
+            string subtringText = myString.Substring(charPos);
+
+            Console.WriteLine(subtringText);
+
+            var anInstanceOfMyClass = new MainClass();
+
+            Console.WriteLine(anInstanceOfMyClass.GetName(0));
+
+
         }
+        public string GetName(int ID)
+        {
+            if (ID < names.Length)
+            {
+                return names[ID];
+            }
+            else
+            {
+                return String.Empty;
+            }
+        }
+
     }
 }
